@@ -1,0 +1,26 @@
+{
+  "name": "sesi-2-digital-kampus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition": "^0.15.12",
+    "@nomicfoundation/hardhat-toolbox": "^6.0.0",
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^16.5.0",
+    "hardhat": "^2.25.0"
+  },
+  "dependencies": {
+    "ethers": "^6.14.4"
+  },
+  "overrides": {
+    "cookie": "^0.7.0"
+  }
+}
