@@ -1,3 +1,5 @@
 {
-  "CampusCreditModule#CampusCredit": "0x52B7a545402B9343a1c4f64dF3B0D55E6826087e"
+  "TokenSuiteModule#CampusBadge": "0x728Edd73F815F6526939A20F84e9c6355BeF0eB9",
+  "TokenSuiteModule#CampusCredit": "0xE9915B0Fd7948DEA0Cd7b30bE3f120F8Cf256FdE",
+  "TokenSuiteModule#StudentID": "0x399bD35151f8E15827985D8518d26b86d5FEADD1"
 }

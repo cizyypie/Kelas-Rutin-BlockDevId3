@@ -4,20 +4,24 @@ import "@nomicfoundation/hardhat-verify";
 import { vars } from "hardhat/config";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "./tasks/account";
+import * as dotenv from "dotenv";
+dotenv.config();
+
 
 const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.28",
     settings: {
       metadata: {
-        bytecodeHash: "none",      // ⬅ prevents IPFS-hash mismatch
-        useLiteralContent: true,   // ⬅ embeds the full source in metadata
+        bytecodeHash: "none", // ⬅ prevents IPFS-hash mismatch
+        useLiteralContent: true, // ⬅ embeds the full source in metadata
       },
       optimizer: {
         enabled: true,
-        runs: 200
-      }
-    }
+        runs: 200,
+      },
+    },
   },
   sourcify: {
     enabled: true,
@@ -25,24 +29,23 @@ const config: HardhatUserConfig = {
     browserUrl: "https://testnet.monadexplorer.com",
   },
   networks: {
-    // Konfigurasi untuk localhost development
-    hardhat: {
-      chainId: 31337,
+    monad: {
+      url: "https://testnet-rpc.monad.xyz/",
     },
     // Konfigurasi untuk Monad Testnet
     monadTestnet: {
       url: "https://testnet-rpc.monad.xyz/",
       chainId: 10143,
-      accounts: vars.has("PRIVATE_KEY") ? [`0x${vars.get("PRIVATE_KEY")}`] : [],
+      accounts: process.env.PRIVATE_KEY ? [`0x${process.env.PRIVATE_KEY}`] : [],
       gasPrice: "auto",
-    }
+    },
   },
   etherscan: {
     enabled: false,
   },
   gasReporter: {
     enabled: true,
-    currency: 'USD',
+    currency: "USD",
     outputFile: "gas-report.txt",
     noColors: true,
   },
@@ -50,8 +53,8 @@ const config: HardhatUserConfig = {
     sources: "./contracts",
     tests: "./test",
     cache: "./cache",
-    artifacts: "./artifacts"
-  }
+    artifacts: "./artifacts",
+  },
 };
 
 export default config;
